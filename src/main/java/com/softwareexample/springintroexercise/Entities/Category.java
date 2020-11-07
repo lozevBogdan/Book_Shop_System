@@ -13,7 +13,12 @@ public class Category  extends BaseEntity{
     private String name;
     private Set<Book> books;
 
+    public Category(String r) {
+        this.name = r;
+    }
+
     public Category() {
+
     }
 
     @Column(name = "name",nullable = false,unique = true)

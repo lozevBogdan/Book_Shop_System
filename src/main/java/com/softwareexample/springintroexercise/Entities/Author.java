@@ -1,9 +1,8 @@
 package com.softwareexample.springintroexercise.Entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import jdk.jfr.DataAmount;
+
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -14,7 +13,14 @@ public class Author extends BaseEntity {
     private String lastName;
     private Set<Book> books;
 
+    public Author(String param, String s) {
+        this.firstName = param;
+        this.lastName = s;
+
+    }
+
     public Author() {
+
     }
 
     @Column(name = "first_name")
@@ -34,7 +40,7 @@ public class Author extends BaseEntity {
         this.lastName = lastName;
     }
 
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "author",fetch = FetchType.EAGER)
     public Set<Book> getBooks() {
         return books;
     }

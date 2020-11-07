@@ -1,9 +1,10 @@
 package com.softwareexample.springintroexercise.util;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public interface FilesUtil {
 
-    String[] radFileContent(String filePath) throws FileNotFoundException;
+    String[] readFileContent(String filePath) throws IOException;
 
 }
